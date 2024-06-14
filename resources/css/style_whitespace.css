@@ -9,6 +9,33 @@ body {
     padding: 0;
 }
 
+/* Navigation Bar */
+nav {
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    background-color: #1f1e1e;
+    box-shadow: 0px 1px 0px 0px #e78645, 0 12px 18px 3px #1f1e1e;
+    z-index: 10;
+    margin-bottom: 100px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 50px;
+}
+
+li a {
+    text-decoration: none;
+    color: #e2e2e2;
+}
+
 /* Main Container */
 .main-container {
     margin: 40px 15%;
@@ -20,25 +47,10 @@ body {
 /* About Me */
 .about-me {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    max-width: 60%;
-}
-
-.about-me .intro {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-}
-
-.about-me .pfp {
-    margin: 30px;
-}
-
-.about-me .pfp img {
-    width: 200px;
-    filter:grayscale(100);
+    margin-bottom: 50px;
+    max-width: 50%;
 }
 
 /* Projects */
@@ -46,7 +58,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 .projects-card-container {
@@ -64,7 +76,7 @@ body {
     margin: 10px;
     padding: 20px;
     transition: 100ms;
-    min-height: 200px;
+    min-height: 300px;
     min-width: 250px;
     max-width: 250px;
 }
@@ -86,6 +98,7 @@ body {
 .combined-container {
     display: flex;
     flex-direction: row;
+    margin: 30px;
     width: 80%;
     justify-content: space-evenly;
 }
@@ -102,11 +115,6 @@ body {
     display: flex;
     flex-direction: column;
     cursor: default;
-}
-
-.contact-container a {
-    color: #e2e2e2;
-    text-decoration: none;
 }
 
 .contact-container a:hover {
