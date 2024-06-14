@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./resources/css/style.css">
-    <script src="./script.js"></script>
+    <script src="./resources/scripts/script.js" defer></script>
     <title>Portfolio - Erik Kooijman</title>
 </head>
-<body>
+<body id="body" class="toggle dark-mode">
+    <div class="nav-buttons">
+        <button class="btn toggle dark-mode" id="btn">
+            <img id="icon" src="./resources/images/lightmode.png">
+        </button>
+    </div>
     <div class="main-container">
         <!-- About me section -->
         <header><h1>Hi, I'm Erik.</h1></header>
@@ -20,7 +25,8 @@
             Hit me up for a chat! :)</p>
         </div>
         <div class="pfp">
-            <img src="./resources/images/pfp.jpeg" alt="This is me.">
+            <img id="pfp" src="./resources/images/pfp.jpeg" alt="This is me.">
+            <img id="sunglasses" src="./resources/images/sunglasses.png" alt="It's kinda bright.">
         </div>
     </div>
 
@@ -28,26 +34,26 @@
     <header><h2>Projects.</h2></header>
     <div class="projects-container">
         <div class="projects-card-container">
-            <div class="project-card">
+            <div class="project-card-toggle project-card-dark">
                 <h3>Mystery Organism</h3>
                 <p>
                     A project about making, comparing and producing specimen using DNA strands. For practice.
                 </p>
                 <h5>Javascript</h5>
             </div>
-            <div class="project-card">
+            <div class="project-card-toggle project-card-dark">
                 <h3>Miracle Masa</h3>
                 <p>
                     A responsive website with products and employees. This was a practice website.
                 </p>
                 <h5>HTML, CSS</h5>
             </div>
-            <div class="project-card">
+            <div class="project-card-toggle project-card-dark">
                 <h3>Portfolio</h3>
                 <p>
                     This website.
                 </p>
-                <h5>HTML, CSS</h5>
+                <h5>HTML, CSS, Javascript</h5>
             </div>
         </div>
     </div>
@@ -69,8 +75,8 @@
         <div class="contact-container">
             <header><h2>Contact.</h2></header>
             <ul>
-                <li><a href="https://www.linkedin.com/in/erik-kooijman-681b41181/">LinkedIn</a></li>
-                <li><a href="https://github.com/Doppeltje/">GitHub</a></li>
+                <li><a class="a-toggle a-dark" href="https://www.linkedin.com/in/erik-kooijman-681b41181/">LinkedIn</a></li>
+                <li><a class="a-toggle a-dark" href="https://github.com/Doppeltje/">GitHub</a></li>
             </ul>
         </div>
     </div>
