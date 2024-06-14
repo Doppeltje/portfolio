@@ -1,10 +1,20 @@
+const changeFilter = false;
+const getSunglasses = true;
+const getNewAccentColor = true;
+
 // Change profile picture filter
 const pfpImage = document.getElementById('pfp');
 pfpImage.addEventListener('click', () => {
-    if (pfpImage.style.filter === 'none') {
-        pfpImage.style.filter = createFilter();
-    } else {
-        pfpImage.style.filter = 'none';
+    if (changeFilter) {
+        if (pfpImage.style.filter === 'none') {
+            pfpImage.style.filter = createFilter();
+        } else {
+            pfpImage.style.filter = 'none';
+        }
+    }
+
+    if (getNewAccentColor) {
+        pickNewAccentColor();
     }
 })
 
@@ -19,6 +29,24 @@ const createFilter = () => {
     const i = Math.floor(Math.random() * filters.length);
     const filter = filters[i];
     return filter;
+}
+
+// Accent colors
+const rootElement = document.querySelector(':root');
+let lastColor = '#44be54';
+const accentColors = [
+    '#44be54',
+    '#4497be',
+    '#ce6fb1',
+    '#ce956f',
+    '#e78645',
+];
+
+const pickNewAccentColor = () => {
+    let newAccentColors = accentColors.filter(element => element !== lastColor);
+    const i = Math.floor(Math.random() * newAccentColors.length);
+    lastColor = newAccentColors[i];
+    rootElement.style.setProperty('--accent-color', newAccentColors[i]);
 }
 
 // Toggle light/dark mode
@@ -53,17 +81,18 @@ toggleBtn.addEventListener('click', () => {
             element.classList.replace('light-mode', 'dark-mode');
         }
     }
+    // Sunglasses animation
     if (currentMode) {
         toggleIcon.src = './resources/images/darkmode.png';
         sunglasses.style.opacity = '90%';
         sunglasses.style.top = '73px';
-        // sunglasses.style.left = '56px';
     } else {
         toggleIcon.src = './resources/images/lightmode.png';
         sunglasses.style.opacity = '0%';
         sunglasses.style.top = '0px';
-        // sunglasses.style.left = '120px';
     }
 
     currentMode = !currentMode;
 })
+
+pickNewAccentColor();
